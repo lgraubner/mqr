@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# npm stuff
+node_modules
+yarn-error.log
+npm-debug.log
+
+# build folder
+dist
+
+# ignored on purpose
+yarn.lock
