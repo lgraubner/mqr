@@ -33,6 +33,7 @@
     "eslint-plugin-jsx-a11y": "4.0.0",
     "eslint-plugin-react": "6.10.3",
     "flow-bin": "^0.45.0",
+    "gzip-size-cli": "^2.0.0",
     "husky": "^0.13.3",
     "lint-staged": "^3.4.1",
     "npm-run-all": "^4.0.2",
@@ -50,7 +51,8 @@
     "flow": "flow",
     "rollup": "rollup -c",
     "minify": "uglifyjs $npm_package_main -cm -o $npm_package_main --in-source-map ${npm_package_main}.map --source-map ${npm_package_main}.map",
-    "build": "npm-run-all lint flow --silent clean rollup minify"
+    "build": "npm-run-all lint flow --silent clean rollup minify size",
+    "size": "echo \"Gzip size: $(gzip-size $npm_package_main)\""
   },
   "lint-staged": {
     "*.js": [

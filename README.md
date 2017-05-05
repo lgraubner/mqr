@@ -2,7 +2,7 @@
 
 > Functional matchMedia wrapper for media query handling.
 
-Simple and functional wrapper for `matchMedia` to work with media queries in JavaScript. There are no dependencies and it supports IE10+. To support legacy browsers a [polyfill](https://github.com/paulirish/matchMedia.js) is required.
+Small functional wrapper for `matchMedia` to work with media queries in JavaScript. Weighs only 334b, has no dependencies and it supports IE10+. To support legacy browsers a [polyfill](https://github.com/paulirish/matchMedia.js) is required.
 
 ## Install
 
