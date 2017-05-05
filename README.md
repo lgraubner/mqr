@@ -44,14 +44,14 @@ query.listen('(min-width: 768px)', handler);
 query.remove('(min-width: 768px)', handler);
 
 // simple media query check
-query.matches('(min-width: 992px)');
+console.log(query.matches('(min-width: 992px)'));
 ```
 
 ## API
 
 ### listen
 
-Register a handler for a given media query. Handler will be executed every time the breakpoint is reached, once. The handler will also be called at initial load.
+Register a handler for a given media query. Handler will be executed once every time the breakpoint is reached. The handler will also be called at initial load.
 
 **Parameters**
 
