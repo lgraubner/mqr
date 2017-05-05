@@ -44,7 +44,7 @@ export default function mqr() {
       const item = all.find(o => o.query === query && o.handler === handler);
       if (item) {
         // remove listener
-        item.mql.removeListener(item.handler);
+        item.mql.removeListener(handler);
 
         // remove from store
         all.splice(all.indexOf(item), 1);
