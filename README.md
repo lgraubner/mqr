@@ -25,7 +25,7 @@ var mqr = require('mqr');
 The [UMD](https://github.com/umdjs/umd) build is also available on [unpkg](https://unpkg.com/#/):
 
 ```HTML
-<script src="https://unpkg.com/mqr/dist/mitt.js"></script>
+<script src="https://unpkg.com/mqr/dist/mqr.js"></script>
 ```
 
 ## Usage
@@ -81,4 +81,4 @@ Checks if given media query is matching.
 
 ## License
 
-[MIT](https://github.com/lgraubner/mqr/blob/master/LICENSE.md) © [Lars Graubner](https://larsgraubner.com)
+[MIT](https://github.com/lgraubner/mqr/blob/master/LICENSE) © [Lars Graubner](https://larsgraubner.com)
