@@ -4,5 +4,9 @@ module.exports = {
   plugins: ['flowtype'],
   env: {
     browser: true,
+    mocha: true,
+  },
+  globals: {
+    chai: false,
   },
 };
