@@ -45,7 +45,9 @@ import mqr from 'mqr';
 const query = mqr();
 
 // listen to viewport changes
-query.listen('(min-width: 768px)', (matches) => console.log(matches));
+query.listen('(min-width: 768px)', matches => {
+  console.log(matches); // boolean
+});
 
 // listen + remove handler
 function handler() {}
@@ -53,7 +55,8 @@ query.listen('(min-width: 768px)', handler);
 query.remove('(min-width: 768px)', handler);
 
 // simple media query check
-console.log(query.matches('(min-width: 992px)'));
+const matches = query.matches('(min-width: 992px)');
+console.log(matches); // boolean
 ```
 
 ## API
@@ -71,7 +74,9 @@ const query = mqr();
 Register a handler for a given media query. Handler will be executed once every time the breakpoint is reached. If `execute` is `true` (default) the handler will also be called when it's registered.
 
 ```JavaScript
-query.listen('(min-width: 768px)', (matches) => console.log(matches), true);
+query.listen('(min-width: 768px)', matches => {
+  console.log(matches); // boolean
+}, false);
 ```
 
 ### mqr.remove(query, handler)
@@ -89,7 +94,8 @@ query.remove('(min-width: 768px)', handler);
 Checks if given media query is matching.
 
 ```JavaScript
-console.log(query.matches('(min-width: 992px)'));
+const matches = query.matches('(min-width: 992px)');
+console.log(matches); // boolean
 ```
 
 ## License
