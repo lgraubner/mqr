@@ -14,23 +14,29 @@ export default function mqr() {
      * @param  {String} query     Media query string
      * @param  {Function} handler Callback function
      */
-    listen(query: string, handler: Function) {
+    listen(query: string, handler: Function, execute: boolean = true) {
       // create MediaQueryList
       const mql = window.matchMedia(query);
 
-      // add listener
-      mql.addListener(m => {
+      // wrap handler
+      const cb = m => {
         handler(m.matches);
-      });
+      };
 
-      // execute callback
-      handler(mql.matches);
+      // add listener
+      mql.addListener(cb);
+
+      if (execute) {
+        // execute callback
+        cb(mql);
+      }
 
       // push to store
       all.push({
         query,
         handler,
         mql,
+        cb,
       });
     },
 
@@ -44,7 +50,7 @@ export default function mqr() {
       const item = all.find(o => o.query === query && o.handler === handler);
       if (item) {
         // remove listener
-        item.mql.removeListener(handler);
+        item.mql.removeListener(item.cb);
 
         // remove from store
         all.splice(all.indexOf(item), 1);
