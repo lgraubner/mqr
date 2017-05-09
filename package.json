@@ -21,7 +21,8 @@
   "license": "MIT",
   "files": [
     "src",
-    "dist"
+    "dist",
+    "!**/__tests__"
   ],
   "devDependencies": {
     "babel-eslint": "^7.2.3",
@@ -59,7 +60,7 @@
     "minify": "uglifyjs $npm_package_main -cm -o $npm_package_main --in-source-map ${npm_package_main}.map --source-map ${npm_package_main}.map",
     "build": "npm-run-all lint flow test clean rollup minify size",
     "size": "echo \"Gzip size: $(gzip-size $npm_package_main)\"",
-    "test": "mocha --require reify/node --require flow-remove-types/register test/**/*.js"
+    "test": "mocha --require reify/node --require flow-remove-types/register src/__tests__/**/*.js"
   },
   "lint-staged": {
     "*.js": [

@@ -9,7 +9,5 @@ npm-debug.log
 # build folder
 dist
 
-# ignored on purpose
-yarn.lock
-
+# misc
 .reify-cache
