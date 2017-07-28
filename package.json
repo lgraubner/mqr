@@ -56,7 +56,8 @@
     "minify": "uglifyjs $npm_package_main -cm -o $npm_package_main --in-source-map ${npm_package_main}.map --source-map ${npm_package_main}.map",
     "build": "npm-run-all lint flow test clean rollup minify size",
     "size": "echo \"Gzip size: $(gzip-size $npm_package_main)\"",
-    "test": "jest"
+    "test": "jest",
+    "release": "npm install && npm run build && npm publish ."
   },
   "lint-staged": {
     "*.js": [
