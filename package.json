@@ -1,6 +1,6 @@
 {
   "name": "mqr",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/mqr.js",
   "module": "dist/mqr.es.js",
   "repository": {
